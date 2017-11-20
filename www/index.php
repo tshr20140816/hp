@@ -2,7 +2,7 @@
 
 $pid = getmypid();
 
-error_log("${pid} START ");
+error_log("${pid} START " . $_SERVER['HTTP_X_FORWARDED_FOR'] . ' ' . $_SERVER['HTTP_USER_AGENT']);
 
 sleep(30);
 
