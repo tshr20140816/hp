@@ -1,7 +1,6 @@
 <?php
 
-$type = $argv[1]; // 'A' or 'E'
-$prefix = $argv[2];
+$prefix = $argv[1];
 
 $stdin = fopen('php://stdin', 'r');
 ob_implicit_flush(true);
