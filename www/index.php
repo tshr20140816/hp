@@ -2,11 +2,11 @@
 
 $pid = getmypid();
 
-error_log("${pid} START " . $_SERVER['HTTP_X_FORWARDED_FOR'] . ' ' . $_SERVER['HTTP_USER_AGENT']);
+$url = 'http://freegeoip.net/json/' . $_SERVER['HTTP_X_FORWARDED_FOR'];
 
-$url = 'http://freegeoip.net/xml/' . $_SERVER['HTTP_X_FORWARDED_FOR'];
+$json = json_decode(file_get_contents($url);, true);
 
-$xml = file_get_contents($url);
+error_log("${pid} START " . $_SERVER['HTTP_X_FORWARDED_FOR'] . ' ' . $json['country_name'] . ' ' . $_SERVER['HTTP_USER_AGENT']);
 
 sleep(25);
 
