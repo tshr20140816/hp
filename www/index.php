@@ -16,7 +16,7 @@ $context = [
     'header' => array(
       'Content-Type: text/plain'
       ),
-    'content' => 'HonneypotR MARKER' . $_SERVER['HTTP_X_FORWARDED_FOR'] . ' ' . $json['country_name']
+    'content' => 'HonneypotR ' . $_SERVER['HTTP_X_FORWARDED_FOR'] . ' ' . $json['country_name']
     ]];
 $res = file_get_contents($url, false, stream_context_create($context));
 
