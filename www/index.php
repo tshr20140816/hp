@@ -8,8 +8,8 @@ $json = json_decode(file_get_contents($url), true);
 
 error_log("${pid} START HTTP_X_FORWARDED_FOR " . $_SERVER['HTTP_X_FORWARDED_FOR'] . ' ' . $json['country_name'] . ' ' . $_SERVER['HTTP_USER_AGENT']);
 
-error_log("${pid} START HTTP_CLIENT_IP " . $_SERVER['HTTP_CLIENT_IP'];
-error_log("${pid} START REMOTE_ADDR " . $_SERVER['REMOTE_ADDR'];
+error_log("${pid} START HTTP_CLIENT_IP " . $_SERVER['HTTP_CLIENT_IP']);
+error_log("${pid} START REMOTE_ADDR " . $_SERVER['REMOTE_ADDR']);
 
 $url = 'https://logs-01.loggly.com/inputs/' . getenv('LOGGLY_TOKEN') . '/tag/hp/';
 
