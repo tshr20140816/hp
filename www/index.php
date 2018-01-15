@@ -8,6 +8,8 @@ $json = json_decode(file_get_contents($url), true);
 
 error_log("${pid} START " . $_SERVER['HTTP_X_FORWARDED_FOR'] . ' ' . $json['country_name'] . ' ' . $_SERVER['HTTP_USER_AGENT']);
 
+error_log("${pid} START " . $_SERVER['HTTP_CLIENT_IP'];
+
 $url = 'https://logs-01.loggly.com/inputs/' . getenv('LOGGLY_TOKEN') . '/tag/hp/';
 
 $context = [
