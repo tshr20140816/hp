@@ -10,14 +10,14 @@ error_log("${pid} START " . $_SERVER['HTTP_X_FORWARDED_FOR'] . ' ' . $json['coun
 
 $url = 'https://logs-01.loggly.com/inputs/' . getenv('LOGGLY_TOKEN') . '/tag/hp/';
 
-$context = array(
-  'http' => array(
+$context = [
+  'http' => [
     'method' => 'POST',
     'header' => array(
       'Content-Type: text/plain'
       ),
     'content' => 'HonneypotR MARKER' . $_SERVER['HTTP_X_FORWARDED_FOR'] . ' ' . $json['country_name']
-    ));
+    ]];
 $res = file_get_contents($url, false, stream_context_create($context));
 
 sleep(25);
